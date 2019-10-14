@@ -37,6 +37,7 @@ NOTE: the "walks" are finding raster types of GRID and only those with _fd or _f
 USGS naming convention for the files you need to complete this.
 
   _fd = Flow direction
+  
   _fa = Flow accumulation
 
 NOTE: the final coordinate system is NAD 83 UTM Z11N so if you need to convert to something else you will need the 
