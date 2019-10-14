@@ -66,22 +66,22 @@ of the script after the last loop.
   a. Create loop specific variables
   b. Identify HUC4 being run (by variables) and print
   c. IF this HUC4 has pour points (if not, exit loop)
-    i. Grab a count of number of points in the specified HUC4
-    ii. Find the Flow accumulation DEM, if exists (if not, exit loop)
-    iii. If the FA dem exists, find the Flow Direction DEM, if exists (if not, exit loop)
-    iv. If the FD dem exists, select the first row in that HUC pour point Feature Class
-      1. Create a point Feature Class out of that single point in the project FGDB
-      2. Run the Snap Pour Point tool on the new Feature Class to create a PourPoint Raster in the project FGDB
-      3. Delete the single Pour Point Feature Class it created
-      4. Run the watershed tool on the Pour Point Raster
-      5. Save the Watershed Raster in the project FGDB
-      6. Convert the Watershed to Polygon, saving it in the project FGDB
-      7. Delete the Raster Watershed
-      8. Append the poly watershed to empty Feature Class created before the loop
-      8. Delete the polygon watershed
-      10. Repeat until all Points done for this HUC4
-    d. Delete the HUC4 point Feature Class the loop just finished with
-    e. Move to the next loop for the next HUC4 until all HUC4’s are completed.
+   i. Grab a count of number of points in the specified HUC4
+   ii. Find the Flow accumulation DEM, if exists (if not, exit loop)
+   iii. If the FA dem exists, find the Flow Direction DEM, if exists (if not, exit loop)
+   iv. If the FD dem exists, select the first row in that HUC pour point Feature Class
+    1. Create a point Feature Class out of that single point in the project FGDB
+    2. Run the Snap Pour Point tool on the new Feature Class to create a PourPoint Raster in the project FGDB
+    3. Delete the single Pour Point Feature Class it created
+    4. Run the watershed tool on the Pour Point Raster
+    5. Save the Watershed Raster in the project FGDB
+    6. Convert the Watershed to Polygon, saving it in the project FGDB
+    7. Delete the Raster Watershed
+    8. Append the poly watershed to empty Feature Class created before the loop
+    9. Delete the polygon watershed
+    10. Repeat until all Points done for this HUC4
+   d. Delete the HUC4 point Feature Class the loop just finished with
+   e. Move to the next loop for the next HUC4 until all HUC4’s are completed.
 13. Reproject the completed Watershed polygon Feature Class to UTM
 14. Calculate acreage
 15. Delete the non-UTM watershed
