@@ -75,19 +75,21 @@ of the script after the last loop.
 
 12. Loop each HUC4 pour point Feature Class created:
 
-  a. Create loop specific variables
+    a. Create loop specific variables
   
-  b. Identify HUC4 being run (by variables) and print
+    b. Identify HUC4 being run (by variables) and print
   
-  c. IF this HUC4 has pour points (if not, exit loop)
+    c. IF this HUC4 has pour points (if not, exit loop)
   
-   i. Grab a count of number of points in the specified HUC4
+      i. Grab a count of number of points in the specified HUC4
    
-   ii. Find the Flow accumulation DEM, if exists (if not, exit loop)
+      ii. Find the Flow accumulation DEM, if exists (if not, exit loop)
    
-   iii. If the FA dem exists, find the Flow Direction DEM, if exists (if not, exit loop)
+      iii. If the FA dem exists, find the Flow Direction DEM, if exists (if not, exit loop)
    
-   iv. If the FD dem exists, select the first row in that HUC pour point Feature Class
+      iii. If the FA dem exists, find the Flow Direction DEM, if exists (if not, exit loop)
+
+      iv. If the FD dem exists, select the first row in that HUC pour point Feature Class
    
     1. Create a point Feature Class out of that single point in the project FGDB
     
