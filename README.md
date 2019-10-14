@@ -1,14 +1,24 @@
 # full-watershed-per-pour-point
-Python to create a full and complete watershed for every pour point you have based on the USGS flow raster data per HUC. Script loops through a pour point at a time to create a watershed and at the end will add the polygon watershed to a Feature Class in a File Geodatabase.
+Python to create a full and complete watershed for every pour point you have based on the USGS flow raster data per HUC. 
+Script loops through a pour point at a time to create a watershed and at the end will add the polygon watershed to a 
+Feature Class in a File Geodatabase.
 
 Made in 2018 for the Nevada Bureau of Water Quality and Planning for the batch deliniation of watersheds individually
 
-LICENSE:  Feel free to use, share, change this script, it was a lot of work and I know Nevada is not the only state or people that needs the ability to create an individual watershed for hundreds or thousands of pour points. No need to give credit as I am sharing this without any restrictions.
+LICENSE:  Feel free to use, share, change this script, it was a lot of work and I know Nevada is not the only 
+state or people that needs the ability to create an individual watershed for hundreds or thousands of pour points. 
+No need to give credit as I am sharing this without any restrictions.
 
-This script was made for Python 2.7.x but a conversion to 3.x should be fairly easy as this was written clean enough to do so. I found the print functions usually is the only thing I change in most scripts but anything not compatible will be flagged once you try to run it in 3.x and you can fix them as they come up.
+This script was made for Python 2.7.x but a conversion to 3.x should be fairly easy as this was written clean enough to do so. 
+I found the print functions usually is the only thing I change in most scripts but anything not compatible will be 
+flagged once you try to run it in 3.x and you can fix them as they come up.
 
 My poor description of this script (LOL)...  Full outline of the script below that has better details...
-This script will create individual FULL watersheds for as many pour points as you have The watershed tool in ArcGIS iteslf moved through a raster format so if you ran more than one along a segment of a stream they would end up "erased" downstream and you'd end up with weird shaped watersheds. This script allows you to get accurate watershed coverage for EACH pour point as well as accurate area calculations and you won't have to run each individual pour point seperate. Hope this explination helps..LOL! If not the outline is below.
+This script will create individual FULL watersheds for as many pour points as you have The watershed tool in
+ArcGIS iteslf moved through a raster format so if you ran more than one along a segment of a stream they would end up 
+"erased" downstream and you'd end up with weird shaped watersheds. This script allows you to get accurate watershed 
+coverage for EACH pour point as well as accurate area calculations and you won't have to run each individual pour 
+point seperate. Hope this explination helps..LOL! If not the outline is below.
 
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -19,13 +29,19 @@ This script will create individual FULL watersheds for as many pour points as yo
 NOTES!!!!
 
 NOTE: This script has some hard coded values for Nevada HUC numbers, you can change these easily.  
-The top of each of the loops are the only places where they are hard coded at, the "walks" will gather your HUC numbers regardless of what they are, it puts those values in the list then will look for that value hard coded in each loop.  Just change the values at the top of the loop and then comment out or copy/paaste each for any additional or less than needed.
+The top of each of the loops are the only places where they are hard coded at, the "walks" will gather your 
+HUC numbers regardless of what they are, it puts those values in the list then will look for that value hard coded in each loop.  
+Just change the values at the top of the loop and then comment out or copy/paaste each for any additional or less than needed.
 
-NOTE: the "walks" are finding raster types of GRID and only those with _fd or _fa endings, which is the USGS naming convention for the files you need to complete this.
+NOTE: the "walks" are finding raster types of GRID and only those with _fd or _fa endings, which is the 
+USGS naming convention for the files you need to complete this.
+
   _fd = Flow direction
   _fa = Flow accumulation
 
-NOTE: the final coordinate system is NAD 83 UTM Z11N so if you need to convert to something else you will need the coordinate system parameters and the transformation if not from NAD83. These projection variables are at the bottom of the script after the last loop.
+NOTE: the final coordinate system is NAD 83 UTM Z11N so if you need to convert to something else you will need the 
+coordinate system parameters and the transformation if not from NAD83. These projection variables are at the bottom 
+of the script after the last loop.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
